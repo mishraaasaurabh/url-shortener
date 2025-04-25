@@ -9,8 +9,8 @@ dotenv.config()
 
 const server = express()
 const PORT = 3000;
-server.use(express.json())
 server.use(cors())
+server.use(express.json())
 // india= "is as grete faf coujkgh ntry"
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
