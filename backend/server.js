@@ -9,7 +9,7 @@ dotenv.config()
 
 const server = express()
 const PORT = 3000;
-server.use(cors())
+server.use(cors({origin: process.env.DEPLOYED_DOMAIN_NAME}))
 server.use(express.json())
 // india= "is as grete faf coujkgh ntry"
 
@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
 server.post('/create-url',(req,res)=>{
     let {oldurl} = req.body;
     let str = nanoid()
-    let newurl = str.slice(7);
+    let newurl = str.slice(0,8);
     const seturl = new UrlDB({
         oldurl,
         newurl
