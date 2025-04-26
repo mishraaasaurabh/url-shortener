@@ -61,9 +61,20 @@ const HomePage = () => {
                     Shorten
                 </button>
 
-                <div className="bg-gray-700 px-4 py-5 rounded shadow border border-gray-600 text-sm w-full max-w-md text-center">
-                    <a href={newurl} target="_blank" className="font-bold pr-2 text-md p-3 rounded-sm  mr-2" > New Link: </a> <span className="text-blue-100 text-lg">{newurl}</span>
+                <div className="bg-gray-800 px-6 py-5 rounded-lg shadow-lg border border-gray-700 text-sm w-full max-w-md mx-auto text-center">
+                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2">
+                        <a
+                            href={newurl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md font-semibold transition duration-200"
+                        >
+                            New Link
+                        </a>
+                        <span className="text-blue-200 text-base break-all">{newurl}</span>
+                    </div>
                 </div>
+
                 <footer className="mt-10 text-center text-sm text-gray-400">
                     Made with ❤️ by <a href="https://www.linkedin.com/in/saurabh-mishra-24a874256/  " target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:underline">Saurabh</a>
                 </footer>
