@@ -9,7 +9,7 @@ dotenv.config()
 
 const server = express()
 const PORT = 3000;
-server.use(cors({origin: process.env.DEPLOYED_DOMAIN_NAME}))
+server.use(cors())
 server.use(express.json())
 // india= "is as grete faf coujkgh ntry"
 
