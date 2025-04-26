@@ -6,6 +6,7 @@ const HomePage = () => {
 
     const [input, setinput] = useState("");
     const [newurl, setnewurl] = useState("Your new Link will appear Here");
+    const [loading,setloading] = useState(false)
 
     const getshorturl = () => {
         if (!input.length) {
@@ -21,6 +22,9 @@ const HomePage = () => {
                 .then(({ data, data: { newurl } }) => {
                     // console.log(data);
                     setnewurl(newurl)
+                    toast.success("Your New URL is Ready",{
+                        duration: 1000
+                    })
                 })
                 .catch((err) => {
                     console.log(err);
@@ -55,10 +59,10 @@ const HomePage = () => {
                     }}
                 />
 
-                <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-md transition"
+                <button className="bg-indigo-600  hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-md transition"
                     onClick={getshorturl}
                 >
-                    Shorten
+                   <span>Shorten</span> 
                 </button>
 
                 <div className="bg-gray-800 px-6 py-5 rounded-lg shadow-lg border border-gray-700 text-sm w-full max-w-md mx-auto text-center">
